@@ -22,4 +22,4 @@ npm run test /src/test/namafile
 
 ## Authors
 
-- [@hafidh](https://gitlab.javan.co.id/hafidh.syahputra)
+- [@Hafidh](https://gitlab.javan.co.id/hafidh.syahputra)
