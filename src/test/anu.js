@@ -1,4 +1,4 @@
-const { Builder, By, Keys, until } = require('selenium-webdriver')
+const {Builder, By, until} = require('selenium-webdriver')
 driver = new Builder().forBrowser('firefox').setFirefoxOptions().build()
 
 describe('Project Name', function () { // nama project suite (grand grand parent)
