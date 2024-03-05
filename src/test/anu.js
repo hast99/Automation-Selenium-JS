@@ -10,23 +10,28 @@ describe('Project Name', function () { // nama project suite (grand grand parent
 
             after(async function () {
                 await driver.sleep(300000)
+                await driver.quit()
             })
 
             it('[TC001]', async function () {
                 await driver.findElement(By.xpath('//button[contains(text(),"Allow all")]')).click()
-                awalan = await driver.findElements(By.xpath('//span[@wordnr]'))
+                const awalan = await driver.findElements(By.xpath('//span[@wordnr]'))
+                const inputField = await driver.wait(until.elementLocated(By.xpath("//input[@id='inputfield']")))
 
                 for (let i = 0; i < awalan.length; i++) {
-                    a = await awalan[i].getText()
-                    b = a.split("")
+                    console.log(await awalan[i].getText())
+                    const a = await awalan[i].getText()
+                    const b = a.split("")
 
                     for (let j = 0; j < b.length; j++) {
-                        await (await driver.wait(until.elementLocated(By.xpath("//input[@id='inputfield']")))).sendKeys(b[j])
+                        await inputField.sendKeys(b[j])
                     }
-                    await (await driver.wait(until.elementLocated(By.xpath("//input[@id='inputfield']")))).sendKeys(" ")
+                    await driver.sleep(900)
+                    await inputField.sendKeys(" ")
                 }
             })
         })
     })
 })
+
 
